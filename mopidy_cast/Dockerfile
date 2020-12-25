@@ -38,6 +38,12 @@ RUN set -ex \
 
 COPY mopidy_cast.conf /var/lib/mopidy/.config/mopidy/mopidy_cast.conf
 
+RUN set -ex \
+&& pip install \
+	Mopidy-Party \
+	Mopidy-YouTube \
+	Mopidy-RadioNet
+
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
